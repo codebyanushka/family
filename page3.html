@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - How Well Do You Know Us?</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="main-content">
+    <h1 class="page-title">How Well Do You Know Us?</h1>
+    <p class="subtitle">Let's see... 💕</p>
+
+    <div class="quiz-container" id="quiz-container">
+      <div class="quiz-question" id="quiz-question">
+        <h3 id="question-text"></h3>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div class="did-you-know" id="did-you-know"></div>
+      </div>
+    </div>
+  </main>
+
+  <a href="index.html" class="music-indicator" title="Music"></a>
+
+  <script src="js/main.js"></script>
+  <script>
+    const quizData = window.ValentineProposal.QUIZ_DATA;
+    let currentQ = 0;
+    let answered = false;
+
+    function renderQuestion() {
+      if (currentQ >= quizData.length) {
+        window.location.href = 'page4.html';
+        return;
+      }
+      const q = quizData[currentQ];
+      document.getElementById('question-text').textContent = q.q;
+      const opts = document.getElementById('quiz-options');
+      opts.innerHTML = '';
+      document.getElementById('did-you-know').classList.remove('show');
+      document.getElementById('did-you-know').textContent = '';
+      answered = false;
+
+      q.opts.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = opt;
+        btn.onclick = () => {
+          if (answered) return;
+          answered = true;
+          if (i === q.correct) {
+            btn.classList.add('correct');
+            window.ValentineProposal.createConfetti();
+            const factEl = document.getElementById('did-you-know');
+            factEl.textContent = 'Did you know… ' + q.fact;
+            factEl.classList.add('show');
+            setTimeout(() => {
+              currentQ++;
+              renderQuestion();
+            }, 2500);
+          } else {
+            btn.classList.add('wrong');
+            setTimeout(() => {
+              btn.classList.remove('wrong');
+              answered = false;
+            }, 800);
+          }
+        };
+        opts.appendChild(btn);
+      });
+    }
+    renderQuestion();
+  </script>
+</body>
+</html>

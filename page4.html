@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Letter - Riya</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="main-content">
+    <h1 class="page-title">A Letter For You</h1>
+
+    <div class="letter-container spell-target">
+      <div class="typewriter-box" id="letter-text"></div>
+
+      <div class="hearts-container" id="hearts-container"></div>
+
+      <p class="teaser-text">One more surprise awaits…</p>
+
+      <div style="text-align: center; margin: 2rem;">
+        <a href="page5.html" class="cta-btn">See The Surprise ✨</a>
+        <button id="copy-link-btn" class="copy-link-btn">Share Link</button>
+      </div>
+    </div>
+
+    <div class="magic-input-container">
+      <input type="text" class="magic-input-box" placeholder="Magic Spell..." maxlength="20">
+    </div>
+  </main>
+
+  <a href="index.html" class="music-indicator" title="Music"></a>
+
+  <script src="js/main.js"></script>
+  <script>
+    const letterText = `It's been 2 years we are together.
+I love you more each day and it grows every day.
+I know we fight sometimes,
+but we always come back to each other.
+I am sorry for all the mistakes I make,
+I am just learning how to love you.
+I love you mera bacha.
+You were with me in thick and thin,
+the strongest support of my life.
+I love you Riya Lakshay Jain.`;
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const el = document.getElementById('letter-text');
+      const vp = window.ValentineProposal;
+      if (el && vp && typeof vp.typewriter === 'function') {
+        try {
+          await vp.typewriter(el, letterText, 35);
+        } catch (err) {
+          el.innerHTML = letterText.replace(/\n/g, '<br>');
+        }
+      } else if (el) {
+        el.innerHTML = letterText.replace(/\n/g, '<br>');
+      }
+
+      const container = document.getElementById('hearts-container');
+      const REASONS = (vp && vp.REASONS) || [
+        "Your smile lights up my world", "You make me want to be better", "Your laugh is my favorite sound"
+      ];
+      REASONS.forEach((reason) => {
+        const heart = document.createElement('div');
+        heart.className = 'heart-reason';
+        heart.textContent = '❤️';
+        heart.innerHTML = '❤️<div class="reason-popup"></div>';
+        const popup = heart.querySelector('.reason-popup');
+        popup.textContent = reason;
+        heart.onclick = (e) => {
+          e.stopPropagation();
+          document.querySelectorAll('.reason-popup.show').forEach(p => p.classList.remove('show'));
+          popup.classList.add('show');
+        };
+        container.appendChild(heart);
+      });
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.reason-popup.show').forEach(p => p.classList.remove('show'));
+      });
+    });
+  </script>
+</body>
+</html>

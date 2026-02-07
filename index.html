@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riya - Something Magical</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="main-content page1">
+    <div class="easter-egg-trigger" style="position: absolute; top: 10px; left: 10px; width: 80px; height: 80px; cursor: pointer;"></div>
+    <span class="easter-egg" style="top: 90px; left: 10px;">You found a secret ✨</span>
+
+    <h1 class="giant-name spell-target" data-riya-name>Riya</h1>
+    <p class="subtitle">I have something magical to show you…</p>
+    <p id="love-quote" class="love-quote"></p>
+    <p id="valentine-countdown" class="countdown"></p>
+
+    <div class="spotify-container">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0xlWd9o8yjKpJ02WJy79kZ" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media;"></iframe>
+    </div>
+
+    <a href="page2.html" class="cta-btn">Open The Magic 🎁</a>
+    <button id="copy-link-btn" class="copy-link-btn">Share Link</button>
+
+    <div class="magic-input-container">
+      <input type="text" class="magic-input-box" placeholder="Magic Spell..." maxlength="20">
+    </div>
+  </main>
+
+  <div class="music-indicator" onclick="document.querySelector('.spotify-container')?.scrollIntoView({behavior:'smooth'})" title="Music"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
