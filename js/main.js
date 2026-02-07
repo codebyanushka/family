@@ -95,7 +95,7 @@ const SPELLS = {
     modal.className = 'secret-spell-message';
     modal.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 300; background: white; padding: 1.5rem; border-radius: 20px; box-shadow: 0 10px 50px rgba(0,0,0,0.3); max-width: 400px; width: 90%;';
     modal.innerHTML = `
-      <p style="margin-bottom: 1rem; color: #333;">Ma ki chut Sujal ki.</p>
+      <p style="margin-bottom: 1rem; color: #333;">Maa ki chut Sujal ki.</p>
       <p style="margin-top: 1rem; font-size: 0.9rem;">Enjoy 10 seconds of magic! ✨</p>
     `;
     document.body.appendChild(modal);
