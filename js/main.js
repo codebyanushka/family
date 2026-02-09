@@ -1,7 +1,7 @@
 /* ===== VALENTINE PROPOSAL - Main JavaScript ===== */
 
 // Console magic words
-const MAGIC_WORDS = ['Riya', 'Lakshay', 'Love', 'Forever', 'Magic', 'Valentine'];
+const MAGIC_WORDS = ['Yash', 'Anushka', 'Love', 'Forever', 'Magic', 'Valentine'];
 MAGIC_WORDS.forEach((word, i) => {
   setTimeout(() => console.log(`%c✨ ${word} ✨`, 'color: #ff69b4; font-size: 14px;'), i * 200);
 });
@@ -71,24 +71,24 @@ function initGlobalEffects() {
 
 // ===== MAGIC SPELL INPUT =====
 const SPELLS = {
-  riya: () => {
-    const el = document.querySelector('.spell-target, .giant-name, [data-riya-name]');
+  yash: () => {
+    const el = document.querySelector('.spell-target, .giant-name, [data-yash-name]');
     if (el) {
       const existing = el.querySelector('.spell-result');
       if (existing) existing.remove();
       const span = document.createElement('span');
       span.className = 'spell-result';
-      span.textContent = ' Lakshay Jain';
+      span.textContent = ' anushka tiwari';
       span.style.cssText = 'color: #ff1493; text-shadow: 0 0 20px rgba(255,105,180,0.8); font-weight: bold;';
       el.appendChild(span);
     }
     const zoomEl = document.createElement('div');
-    zoomEl.className = 'riya-zoom-flash';
-    zoomEl.innerHTML = 'Riya Lakshay Jain';
-    zoomEl.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 400; font-family: Cormorant Garamond, serif; font-size: 4rem; font-weight: bold; color: white; text-shadow: 0 0 40px #ff69b4, 0 0 80px #8b5cf6; animation: riyaZoomFlash 2s ease-out forwards; pointer-events: none;';
+    zoomEl.className = 'yash-zoom-flash';
+    zoomEl.innerHTML = 'yash anushka tiwari';
+    zoomEl.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 400; font-family: Cormorant Garamond, serif; font-size: 4rem; font-weight: bold; color: white; text-shadow: 0 0 40px #ff69b4, 0 0 80px #8b5cf6; animation: yashZoomFlash 2s ease-out forwards; pointer-events: none;';
     document.body.appendChild(zoomEl);
     setTimeout(() => zoomEl.remove(), 5000);
-    console.log('riya');
+    console.log('yash');
   },
   rockstar: () => {
     const modal = document.createElement('div');
@@ -139,19 +139,19 @@ const SPELLS = {
     setTimeout(() => princess.remove(), 5000);
     console.log('princess');
   },
-  lakshay: () => {
+  anushka: () => {
     const container = document.createElement('div');
-    container.className = 'lakshay-extravagant';
+    container.className = 'anushka-extravagant';
     container.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 400; display: flex; align-items: center; justify-content: center; pointer-events: none;';
     const stick = document.createElement('div');
     stick.className = 'stick-figure';
-    stick.innerHTML = '🕺<br><span style="font-family: Dancing Script; font-size: 2rem;">Lakshay</span>';
-    stick.style.cssText = 'font-size: 8rem; background: linear-gradient(135deg, #ff69b4, #8b5cf6); padding: 3rem 4rem; border-radius: 30px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 80px rgba(255,105,180,0.5); animation: lakshayEntrance 0.6s ease-out;';
+    stick.innerHTML = '🕺<br><span style="font-family: Dancing Script; font-size: 2rem;">anushka</span>';
+    stick.style.cssText = 'font-size: 8rem; background: linear-gradient(135deg, #ff69b4, #8b5cf6); padding: 3rem 4rem; border-radius: 30px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 80px rgba(255,105,180,0.5); animation: anushkaEntrance 0.6s ease-out;';
     container.appendChild(stick);
     document.body.appendChild(container);
     setTimeout(() => {
-      stick.style.animation = 'lakshayDeath 1s ease-in forwards';
-      stick.innerHTML = '💀<br><span style="font-family: Dancing Script; font-size: 2rem;">Lakshay (RIP)</span>';
+      stick.style.animation = 'anushkaDeath 1s ease-in forwards';
+      stick.innerHTML = '💀<br><span style="font-family: Dancing Script; font-size: 2rem;">anushka (RIP)</span>';
       const explosion = document.createElement('div');
       explosion.innerHTML = '💥';
       explosion.style.cssText = 'position: absolute; font-size: 6rem; animation: explosionPop 0.8s ease-out;';
@@ -170,7 +170,7 @@ const SPELLS = {
       }
     }, 800);
     setTimeout(() => container.remove(), 5000);
-    console.log('lakshay');
+    console.log('anushka');
   },
   forever: () => {
     document.body.classList.add('forever-freeze');
@@ -190,7 +190,7 @@ const SPELLS = {
     console.log('barbie');
   },
   queen: () => {
-    const nameEl = document.querySelector('.giant-name, .page-title, [data-riya-name]');
+    const nameEl = document.querySelector('.giant-name, .page-title, [data-yash-name]');
     if (nameEl) nameEl.classList.add('crown-on-name');
     setTimeout(() => nameEl?.classList.remove('crown-on-name'), 5000);
     console.log('queen');
@@ -267,9 +267,9 @@ const SPELLS = {
     setTimeout(() => {}, 5000);
     console.log('castle');
   },
-  riyalakshay: () => {
-    alert('You found the secret spell! Riya + Lakshay = Forever 💖');
-    console.log('riyalakshay');
+  yashanushka: () => {
+    alert('You found the secret spell! yash + anushka = Forever 💖');
+    console.log('yashanushka');
   }
 };
 
@@ -413,15 +413,35 @@ function heartFireworks() {
   }
 }
 
-// ===== QUIZ =====
 const QUIZ_DATA = [
-  { q: "Her fav color?", opts: ["Red ❤️", "Blue", "Pink"], correct: 0, fact: "Red is the color of love!" },
-  { q: "What kind of person is she?", opts: ["Mountain person 🏔️", "Beach person", "City person"], correct: 0, fact: "Adventure awaits in the mountains together!" },
-  { q: "Fav food?", opts: ["Cheesy Fries 🍟", "Pizza", "Burger"], correct: 0, fact: "Cheesy fries and you = perfect combo!" },
-  { q: "Fav place?", opts: ["Social, Hauz Khas", "CP", "Cafe"], correct: 0, fact: "Social has seen many of your moments!" },
-  { q: "First date?", opts: ["Ama Cafe ☕", "Starbucks", "Social"], correct: 0, fact: "Ama Cafe - where it all began!" },
-  { q: "Relationship lasted due to?", opts: ["100₹ given during chhole bhature 😂", "Destiny", "Luck"], correct: 0, fact: "Sometimes the smallest gestures mean the most!" }
+  {
+    q: "What food reminds you of me?",
+    opts: ["PAV BHAJI", "KABAB", "PIZZA", "TANDOORI CHICKEN"],
+    correct: 0,
+    fact: "PAV BHAJI is the perfect blend of comfort and flavor, just like you!"
+  },
+  {
+    q: "When did you first realize you liked me?",
+    type: "text",
+    fact: "That moment matters more than the answer itself 🤍"
+  },
+  {
+    q: "If you had to describe us in one word, what would it be?",
+    type: "text",
+    fact: "Some bonds don’t need many words."
+  },
+  {
+    q: "What color would you use to define us?",
+    type: "text",
+    fact: "Love always has its own shade 💕"
+  },
+  {
+    q: "What flower makes you think of me?",
+    type: "text",
+    fact: "Some people feel like flowers — soft, unforgettable."
+  }
 ];
+
 
 // ===== REASONS =====
 const REASONS = [
@@ -464,17 +484,11 @@ function initScrollProgress() {
 function initCountdown() {
   const el = document.getElementById('valentine-countdown');
   if (!el) return;
-  const startDate = new Date('2024-07-01T00:00:00');
-  function update() {
-    const now = new Date();
-    const diffMs = now - startDate;
-    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-    el.innerHTML = days + ' days, ' + hours + ' hours, ' + mins + ' minutes together 💕';
-  }
-  update();
-  setInterval(update, 60000); // update every minute
+
+  el.innerHTML =
+    "Sometimes I'm so shocked that we've only spent three years,<br>" +
+    "feels like a lifetime to me.<br>" +
+    "You're my home 🤍";
 }
 
 function initLoveQuotes() {
