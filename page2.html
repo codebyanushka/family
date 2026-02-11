@@ -3,73 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Moments - Riya</title>
+  <title>Our Moments</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <main class="main-content">
     <h1 class="page-title">Our Moments</h1>
-    <p class="subtitle">Every second with you is a memory I treasure</p>
    
 
     <div class="gallery-grid" id="gallery">
-      <div class="polaroid" style="--rotation: -5deg;" data-special data-popup="You found our first date — Ama Cafe ☕">
-        <img src="images/photo1.jpg" alt="Memory 1 - Ama Cafe">
-        <span class="polaroid-caption">KISSIE CUTU</span>
+      <div class="polaroid" style="--rotation: 3deg;">
+        <img src="images/photo1.jpg" alt="Memory 1">
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: 3deg;">
         <img src="images/photo2.jpg" alt="Memory 2">
-        <span class="polaroid-caption">Handsome Munda💕</span>
+        <span class="polaroid-caption"></span>
       </div>
-      <div class="polaroid empty" data-love-note>
-        <span style="font-size: 2rem;">💌</span>
-        <span class="love-note-text" style="display:none; font-size: 0.9rem;">You make every day better</span>
-      </div>
+      
       <div class="polaroid" style="--rotation: -2deg;">
         <img src="images/photo3.jpg" alt="Memory 3">
-        <span class="polaroid-caption">SEXY MAN</span>
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: 4deg;">
         <img src="images/photo4.jpg" alt="Memory 4">
-        <span class="polaroid-caption">Forever</span>
+        <span class="polaroid-caption"></span>
       </div>
-      <div class="polaroid empty" data-love-note>
-        <span style="font-size: 2rem;">✨</span>
-        <span class="love-note-text" style="display:none; font-size: 0.9rem;">Your smile is my favorite</span>
-      </div>
+      
       <div class="polaroid" style="--rotation: -3deg;">
         <img src="images/photo5.jpg" alt="Memory 5">
-        <span class="polaroid-caption">My love</span>
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: 2deg;">
         <img src="images/photo6.jpg" alt="Memory 6">
-        <span class="polaroid-caption">Yash 💖</span>
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: -4deg;">
         <img src="images/photo7.jpg" alt="Memory 7">
-        <span class="polaroid-caption">I love this picture</span>
+        <span class="polaroid-caption"></span>
       </div>
-      <div class="polaroid empty" data-love-note>
-        <span style="font-size: 2rem;">💖</span>
-        <span class="love-note-text" style="display:none; font-size: 0.9rem;">I fall for you more each day</span>
-      </div>
+      
       <div class="polaroid" style="--rotation: 1deg;">
         <img src="images/photo8.jpg" alt="Memory 8">
-        <span class="polaroid-caption">MY Man</span>
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: -1deg;">
         <img src="images/photo9.jpg" alt="Memory 9">
-        <span class="polaroid-caption">AHEM AHEM Blushin</span>
+        <span class="polaroid-caption"></span>
       </div>
       <div class="polaroid" style="--rotation: 3deg;">
         <img src="images/photo10.jpg" alt="Memory 10">
-        <span class="polaroid-caption">Warmest  </span>
+        <span class="polaroid-caption"></span>
+      </div>
+      <div class="polaroid" style="--rotation: 3deg;">
+        <img src="images/photo11.jpg" alt="Memory 11">
+        <span class="polaroid-caption"></span>
       </div>
     </div>
 
-    <div style="text-align: center; margin: 2rem;">
-      <a href="page3.html" class="cta-btn">Continue ✨</a>
-    </div>
+    
   </main>
 
   <a href="index.html" class="music-indicator" title="Music"></a>
@@ -90,9 +82,9 @@
         }
       });
     });
-    document.querySelectorAll('[data-love-note]').forEach(el => {
+    document.querySelectorAll('').forEach(el => {
       el.addEventListener('click', () => {
-        const text = el.querySelector('.love-note-text');
+        const text = el.querySelector('');
         if (text) {
           text.style.display = text.style.display === 'none' ? 'block' : 'none';
         }
